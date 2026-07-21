@@ -1,0 +1,410 @@
+<title>HangMan — Terms of Service</title>
+<meta name="description" content="Terms of Service for HangMan, a word-guessing game by FBCenter.">
+<style>
+  :root {
+    --bg: #EEF1F7;
+    --surface: #FFFFFF;
+    --ink: #17203A;
+    --body: #3B455C;
+    --muted: #6B7590;
+    --faint: #99A2B8;
+    --border: #DEE3EF;
+    --navy: #0B2C6B;
+    --navy-soft: #E8ECF8;
+    --gold: #C68A1F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0F1320;
+      --surface: #171B29;
+      --ink: #EDEFF6;
+      --body: #C3C9DA;
+      --muted: #8991A8;
+      --faint: #5C6480;
+      --border: #262B3D;
+      --navy: #7C9CE8;
+      --navy-soft: #1C2440;
+      --gold: #E8B84B;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F1320; --surface: #171B29; --ink: #EDEFF6; --body: #C3C9DA;
+    --muted: #8991A8; --faint: #5C6480; --border: #262B3D; --navy: #7C9CE8;
+    --navy-soft: #1C2440; --gold: #E8B84B;
+  }
+  :root[data-theme="light"] {
+    --bg: #EEF1F7; --surface: #FFFFFF; --ink: #17203A; --body: #3B455C;
+    --muted: #6B7590; --faint: #99A2B8; --border: #DEE3EF; --navy: #0B2C6B;
+    --navy-soft: #E8ECF8; --gold: #C68A1F;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--body);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  a { color: var(--navy); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  h1, h2 {
+    font-family: ui-serif, Georgia, "Times New Roman", serif;
+    color: var(--ink);
+    text-wrap: balance;
+    font-weight: 600;
+  }
+
+  header.masthead {
+    background: var(--navy);
+    padding: 48px 24px 40px;
+  }
+  .masthead-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .masthead-inner .badge {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+  }
+  .masthead-inner h1 {
+    color: #fff;
+    font-size: clamp(26px, 4vw, 34px);
+    margin: 0 0 4px;
+  }
+  .masthead-inner .eyebrow {
+    color: rgba(255,255,255,0.68);
+    font-size: 13px;
+    margin: 0;
+    letter-spacing: 0.03em;
+  }
+
+  .layout {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 40px 24px 96px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  @media (max-width: 760px) {
+    .layout { grid-template-columns: 1fr; gap: 28px; }
+    nav.toc { position: static !important; }
+  }
+
+  nav.toc {
+    position: sticky;
+    top: 28px;
+  }
+  nav.toc .toc-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+    margin: 0 0 12px;
+  }
+  nav.toc ol {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  nav.toc a {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 13.5px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    line-height: 1.4;
+  }
+  nav.toc a:hover { background: var(--navy-soft); color: var(--ink); }
+  nav.toc a span.n {
+    font-variant-numeric: tabular-nums;
+    color: var(--faint);
+    width: 16px;
+    flex-shrink: 0;
+  }
+
+  main { min-width: 0; }
+
+  .intro-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-bottom: 40px;
+    font-size: 14.5px;
+    color: var(--muted);
+  }
+  .intro-card strong { color: var(--ink); }
+
+  section.clause {
+    padding-top: 8px;
+    margin-bottom: 44px;
+    scroll-margin-top: 24px;
+  }
+  section.clause + section.clause {
+    border-top: 1px solid var(--border);
+    padding-top: 40px;
+  }
+  .clause-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .clause-head .num {
+    font-family: ui-serif, Georgia, serif;
+    font-size: 15px;
+    color: var(--gold);
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+  .clause-head h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+  section.clause p {
+    margin: 0 0 14px;
+    max-width: 66ch;
+  }
+  section.clause ul {
+    margin: 0 0 14px;
+    padding-left: 22px;
+    max-width: 62ch;
+  }
+  section.clause li { margin-bottom: 6px; }
+  section.clause p:last-child,
+  section.clause ul:last-child { margin-bottom: 0; }
+
+  code.mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: var(--navy-soft);
+    padding: 1px 6px;
+    border-radius: 5px;
+    font-size: 0.9em;
+  }
+
+  footer.page-footer {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+    border-top: 1px solid var(--border);
+    padding-top: 28px;
+    font-size: 13.5px;
+    color: var(--faint);
+  }
+  footer.page-footer a { color: var(--muted); }
+</style>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="badge" aria-hidden="true">🪢</div>
+    <div>
+      <h1>Terms of Service</h1>
+      <p class="eyebrow">HangMan — Word Guess Game &middot; Effective July 21, 2026</p>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sections">
+    <p class="toc-label">On this page</p>
+    <ol>
+      <li><a href="#acceptance"><span class="n">1</span> Acceptance of These Terms</a></li>
+      <li><a href="#about"><span class="n">2</span> About HangMan</a></li>
+      <li><a href="#eligibility"><span class="n">3</span> Eligibility</a></li>
+      <li><a href="#account"><span class="n">4</span> Your Account</a></li>
+      <li><a href="#subscriptions"><span class="n">5</span> Subscriptions &amp; Purchases</a></li>
+      <li><a href="#conduct"><span class="n">6</span> Acceptable Use</a></li>
+      <li><a href="#content"><span class="n">7</span> Content You Provide</a></li>
+      <li><a href="#ads"><span class="n">8</span> Advertising</a></li>
+      <li><a href="#ip"><span class="n">9</span> Intellectual Property</a></li>
+      <li><a href="#warranty"><span class="n">10</span> No Warranty</a></li>
+      <li><a href="#liability"><span class="n">11</span> Limitation of Liability</a></li>
+      <li><a href="#termination"><span class="n">12</span> Termination</a></li>
+      <li><a href="#changes"><span class="n">13</span> Changes to These Terms</a></li>
+      <li><a href="#contact"><span class="n">14</span> Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="intro-card">
+      <strong>The short version:</strong> play fair, the subscription renews until you cancel it
+      through Apple or Google (not us), don't try to break the game or the leaderboard, and we can
+      suspend accounts that do. Everything below is the full version.
+    </div>
+
+    <section class="clause" id="acceptance">
+      <div class="clause-head"><span class="num">1</span><h2>Acceptance of These Terms</h2></div>
+      <p>
+        These Terms of Service ("Terms") are an agreement between you and FBCenter ("we," "us,"
+        "our") governing your use of HangMan (the "App"). By downloading, installing, or using the
+        App, you agree to these Terms. If you don't agree, please don't use the App.
+      </p>
+      <p>
+        See also our <a href="https://fbcenterofficial.github.io/hangman-privacy-policy/">Privacy
+        Policy</a>, which explains what information we collect and how — it's incorporated into
+        these Terms by reference.
+      </p>
+    </section>
+
+    <section class="clause" id="about">
+      <div class="clause-head"><span class="num">2</span><h2>About HangMan</h2></div>
+      <p>
+        HangMan is a word-guessing game with several modes — Classic, Killer, and Daily Word — plus
+        themed Word Packs, a public leaderboard, and an optional Premium subscription. Some features
+        (like Daily Word streaks and the leaderboard) require a free account; others work without one.
+      </p>
+    </section>
+
+    <section class="clause" id="eligibility">
+      <div class="clause-head"><span class="num">3</span><h2>Eligibility</h2></div>
+      <p>
+        HangMan is not directed at children under 13, and you must be at least 13 years old to
+        create an account. If you're old enough to use the App but not yet an adult where you live,
+        you should have a parent or guardian's permission to make in-app purchases.
+      </p>
+    </section>
+
+    <section class="clause" id="account">
+      <div class="clause-head"><span class="num">4</span><h2>Your Account</h2></div>
+      <p>
+        Creating an account requires an email address and password (or, on supported platforms,
+        wherever the App offers passwordless sign-in). You're responsible for keeping your login
+        credentials to yourself and for anything that happens under your account. Each account is
+        for one person — please don't share credentials or create accounts on someone else's behalf.
+      </p>
+      <p>
+        You can delete your account at any time from Settings inside the App. This permanently
+        removes your account and its associated game data — there's no undo.
+      </p>
+    </section>
+
+    <section class="clause" id="subscriptions">
+      <div class="clause-head"><span class="num">5</span><h2>Subscriptions &amp; In-App Purchases</h2></div>
+      <p>
+        HangMan Premium is offered as an auto-renewing monthly or yearly subscription, purchased
+        and billed through the Apple App Store or Google Play — whichever store you downloaded the
+        App from. We never see or store your payment details.
+      </p>
+      <ul>
+        <li>Your subscription renews automatically at the price you agreed to, until you cancel it.</li>
+        <li>Cancel any time through your Apple ID or Google Play account settings — not inside the
+          App itself, since the App can't cancel a store-billed subscription directly.</li>
+        <li>Refunds are handled by Apple or Google under their own refund policies; we can't issue
+          refunds directly.</li>
+        <li>Prices can change; if they do, the store will show you the new price before it takes
+          effect on your next renewal.</li>
+      </ul>
+    </section>
+
+    <section class="clause" id="conduct">
+      <div class="clause-head"><span class="num">6</span><h2>Acceptable Use</h2></div>
+      <p>When using HangMan, you agree not to:</p>
+      <ul>
+        <li>Cheat, exploit bugs, or use automated tools to inflate your score or leaderboard rank</li>
+        <li>Choose a username that's offensive, impersonates someone else, or infringes a trademark</li>
+        <li>Attempt to reverse-engineer, decompile, or tamper with the App</li>
+        <li>Use the App in any way that disrupts it for other players</li>
+      </ul>
+      <p>
+        We may remove leaderboard entries, reset progress, or suspend accounts that violate this
+        section.
+      </p>
+    </section>
+
+    <section class="clause" id="content">
+      <div class="clause-head"><span class="num">7</span><h2>Content You Provide</h2></div>
+      <p>
+        The main things you provide are your username (shown publicly on the leaderboard) and,
+        optionally, a message sent through the in-app Contact Us feature. You're responsible for
+        what you submit, and it shouldn't be unlawful, harassing, or infringe anyone else's rights.
+      </p>
+    </section>
+
+    <section class="clause" id="ads">
+      <div class="clause-head"><span class="num">8</span><h2>Advertising</h2></div>
+      <p>
+        Free accounts see ads served through Google's Mobile Ads (AdMob) network, which may include
+        personalized ads if you've allowed tracking. Premium subscribers don't see ads. See our
+        Privacy Policy for details on what the ad network can access.
+      </p>
+    </section>
+
+    <section class="clause" id="ip">
+      <div class="clause-head"><span class="num">9</span><h2>Intellectual Property</h2></div>
+      <p>
+        The App, its design, word lists, artwork, and the HangMan name are owned by FBCenter or our
+        licensors. These Terms give you a personal, non-transferable license to use the App for its
+        intended purpose — they don't transfer ownership of anything to you.
+      </p>
+    </section>
+
+    <section class="clause" id="warranty">
+      <div class="clause-head"><span class="num">10</span><h2>No Warranty</h2></div>
+      <p>
+        HangMan is provided "as is." We don't guarantee it will always be available, error-free, or
+        uninterrupted — like any app relying on a network connection and third-party services, it
+        can occasionally break, lag, or go down.
+      </p>
+    </section>
+
+    <section class="clause" id="liability">
+      <div class="clause-head"><span class="num">11</span><h2>Limitation of Liability</h2></div>
+      <p>
+        To the fullest extent the law allows, FBCenter isn't liable for indirect, incidental, or
+        consequential damages arising from your use of the App. Our total liability for any claim
+        related to the App is limited to the amount you paid us, if any, in the 12 months before
+        the claim.
+      </p>
+    </section>
+
+    <section class="clause" id="termination">
+      <div class="clause-head"><span class="num">12</span><h2>Termination</h2></div>
+      <p>
+        You can stop using the App and delete your account whenever you like. We may suspend or
+        terminate accounts that violate these Terms, including the Acceptable Use section above.
+        Deleting your account doesn't automatically cancel an active subscription — cancel that
+        separately through Apple or Google, or you may keep being billed.
+      </p>
+    </section>
+
+    <section class="clause" id="changes">
+      <div class="clause-head"><span class="num">13</span><h2>Changes to These Terms</h2></div>
+      <p>
+        We may update these Terms as the App changes. If we make a material change, we'll update
+        the effective date above. Continuing to use HangMan after a change means you accept the
+        update.
+      </p>
+    </section>
+
+    <section class="clause" id="contact">
+      <div class="clause-head"><span class="num">14</span><h2>Contact Us</h2></div>
+      <p>
+        Questions about these Terms? Reach us at
+        <a href="mailto:fbcenterofficial@gmail.com">fbcenterofficial@gmail.com</a>, or through the
+        Contact Us page inside the App.
+      </p>
+    </section>
+  </main>
+</div>
+
+<footer class="page-footer">
+  HangMan — Word Guess Game, by FBCenter. See also our
+  <a href="https://fbcenterofficial.github.io/hangman-privacy-policy/">Privacy Policy</a>.
+</footer>
